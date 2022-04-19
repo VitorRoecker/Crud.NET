@@ -1,5 +1,4 @@
 ﻿using Core.Entidade;
-using Core.Messaging;
 using Crud.Infra.Helpers;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
