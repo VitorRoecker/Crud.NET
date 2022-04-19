@@ -14,7 +14,11 @@ namespace Crud.Tests.Tests
         [Description("O método deve retornar uma exception quando o nome for nulo ou vazio")]
         public void Pessoa_ShouldThrowException_WhenHaveEmptyOrNullName()
         {
-            var pessoa = new Pessoa();
+            var pessoa = new Pessoa()
+            {
+                Idade = 30,
+                DocumentoFederal = "077.879.429-67",
+            };
 
             var exp = Assert.Throws<Exception>(() => pessoa.Validate());
 

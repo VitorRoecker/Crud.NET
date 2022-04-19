@@ -1,4 +1,5 @@
 ﻿using Core.Entidade;
+using Crud.Infra.Helpers;
 using System;
 using System.ComponentModel;
 using Xunit;
@@ -18,9 +19,9 @@ namespace Crud.Tests.Tests
                 DocumentoFederal = "18273458934"
             };
 
-            var exp = Assert.Throws<Exception>(() => pessoa.Validate());
+            var isValid = Validacoes.ValidaCpf(pessoa.DocumentoFederal);
 
-            Assert.Equal("Documento federal inválido", exp.Message);
+            Assert.False(isValid);
         }
     }
 }
