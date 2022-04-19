@@ -9,7 +9,7 @@ namespace Crud.Tests.Tests
     {
         [Fact]
         [Description("O método deve retornar uma exception quando o documento federal for invalido")]
-        public void Pessoa_ShouldThrowException_WhenHaveADocumentoFederalIsInvalid()
+        public void Pessoa_ShouldThrowException_WhenHaveAInvalidDocumentoFederal()
         {
             var pessoa = new Pessoa()
             {
