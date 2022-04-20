@@ -23,6 +23,7 @@
   
   ### Como resolver conflitos de merge?
   Ao tentar enviar suas alterações para o repositorio remoto, pode acontecer de ocorrer conflitos de merge. Esses conflitos ocorrem quando duas pessoas alteram o mesmo trecho do código. Ao executar o comando `git push` os arquivos ficaram destacados onde os conflitos ocorreram.
+  
   Exemplo: 
     `<html>
 	    <head>
@@ -37,8 +38,7 @@
 	    </body>
     </html>`
     
-    Após resolver os conflitos você irá realizar um commit com as alterações.
-    
+   Após resolver os conflitos você irá realizar um commit com as alterações.
     
    ### Como utilizar as branchs?
    Branch é uma ramificação no git. É um ponteiro para as alterações feitas nos arquivos do projeto.
@@ -55,3 +55,19 @@
    `git blame` Mostra o ultimo usuario a alterar o trecho especifo do código.
    `git bisect` Descobre qual o commit no histórico do seu projeto introduziu um "bug" (problema).
     
+   ### Como escolher determinados commits
+   Para fazer um cherry pick devemos entrar na branch que quer "pegar" o commit, para isso utilize o comando `git checkout nomeDaBranch`. Logo após isso, devemos utilizar o comando `git log` para buscar o ID do commit.
+   Volte para a branch que deseja a alteração e utilize o comando `git cherry-pick idDoCommit`, ele irá jogar todas as alterações do commit para a branch atual.
+
+   Caso queira pegar todos os commits de uma branch para a sua local, execute o seguinte comando, `git cherry-pick A^..B` para buscar as alterações de todos os commits (inclusive o primeiro) irão para a branch atual.
+
+   `--edit` vai fazer com que o git solicite a mensagem de commit antes de aplicar a operação de cherry-pick.
+   
+   `--continue` é para enviar o commit do cherry-pick.
+   
+   `--skip` é para ir para o próximo commit.
+   
+   `--abort` é para "cancelar" o cherry-pick.
+   
+   `--quit` para sair da opção cherry-pick.
+   
